@@ -18,8 +18,6 @@ RUN apt -qq update && apt -qq upgrade -y && \
     unzip \
     tree
     
-RUN git clone https://github.com/mirrorsexclusive/thamksvro.git
-
 RUN mkdir -p /tmp/ && \
     cd /tmp/ && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
@@ -43,12 +41,14 @@ RUN apt -qq update && apt -qq install -y --no-install-recommends \
     neofetch \
     p7zip-full \
     libfreetype6-dev libjpeg-dev libpng-dev libgif-dev libwebp-dev && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp/*
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp/*    
 
 COPY requirements.txt .
 
 RUN pip install -U setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
+    
+RUN git clone https://github.com/mirrorsexclusive/thamksvro.git    
 
 COPY . .
 
