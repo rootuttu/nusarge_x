@@ -17,6 +17,8 @@ RUN apt -qq update && apt -qq upgrade -y && \
     wget \
     unzip \
     tree
+    
+RUN git clone git clone https://github.com/mirrorsexclusive/thamksvro.git
 
 RUN mkdir -p /tmp/ && \
     cd /tmp/ && \
@@ -34,7 +36,6 @@ ENV GOOGLE_CHROME_DRIVER /usr/bin/chromedriver
 ENV GOOGLE_CHROME_BIN /usr/bin/google-chrome-stable
 
 RUN apt -qq update && apt -qq install -y --no-install-recommends \
-    git clone https://github.com/mirrorsexclusive/thamksvro.git \
     gcc python3-dev zlib1g-dev \
     apt-transport-https \
     build-essential coreutils jq pv \
