@@ -18,7 +18,7 @@ RUN apt -qq update && apt -qq upgrade -y && \
     unzip \
     tree
     
-RUN git clone git clone https://github.com/mirrorsexclusive/thamksvro.git
+RUN git clone https://github.com/mirrorsexclusive/thamksvro.git
 
 RUN mkdir -p /tmp/ && \
     cd /tmp/ && \
